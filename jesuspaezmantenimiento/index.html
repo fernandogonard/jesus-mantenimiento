@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JP Mantenimiento ofrece servicios integrales de mantenimiento para hoteles y domicilios particulares. Especializados en pintura, albañilería, fontanería, electricidad, gas, iluminación y climatización. Contáctanos para un servicio de calidad.">
+  <title>JP Mantenimiento - Servicios de Mantenimiento Integral</title>
+  <link rel="icon" href="/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <header>
+    <img src="asset/logo1baseleonyjp.png" alt="Logo de JP Mantenimiento" class="logo">
+   
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="header-content">
+      <h1>Mantenimiento Integral para Hoteles y Domicilios Particulares</h1>
+      <p>Soluciones profesionales para transformar y cuidar tus espacios.</p>
+    </div>
+  </header>
+
+  <section id="servicios">
+    <h2>Nuestros Servicios</h2>
+    
+    <div class="servicio">
+      <img src="asset/pintor-de-hotel-conoce-sus-trabajos.jpg" alt="Pintura y Acabados">
+      <div class="descripcion">
+        <h3>Pintura y Acabados</h3>
+        <p>Nuestros expertos en pintura proporcionan servicios de alta calidad para dar vida a tus espacios. Ya sea una nueva capa de color o un acabado especial, nos encargamos de transformar tus ambientes.</p>
+      </div>
+    </div>
+  
+    <div class="servicio">
+      <img src="asset/albanileria.jpg" alt="Albañilería y Reparaciones Estructurales">
+      <div class="descripcion">
+        <h3>Albañilería y Reparaciones Estructurales</h3>
+        <p>Ofrecemos servicios de albañilería y reparaciones estructurales para mantener la integridad de tu propiedad. Desde pequeñas reparaciones hasta proyectos más grandes, estamos aquí para garantizar la solidez de tu edificación.</p>
+      </div>
+    </div>
+  
+    <div class="servicio">
+      <img src="asset/fontaneria.jpg" alt="Mantenimiento de Baños y Fontanería">
+      <div class="descripcion">
+        <h3>Mantenimiento de Baños y Fontanería</h3>
+        <p>Nos especializamos en el mantenimiento de baños y sistemas de fontanería. Desde la reparación de fugas hasta la instalación de nuevos accesorios, aseguramos un funcionamiento eficiente de tus instalaciones sanitarias.</p>
+      </div>
+    </div>
+    
+    <div class="servicio">
+      <img src="asset/electricidad.jpg" alt="Servicios Eléctricos">
+      <div class="descripcion">
+        <h3>Servicios Eléctricos</h3>
+        <p>Nuestros electricistas altamente capacitados brindan servicios eléctricos seguros y eficientes. Desde la instalación de nuevos sistemas hasta la reparación de fallas, garantizamos un suministro eléctrico confiable.</p>
+      </div>
+    </div>
+    
+    <div class="servicio">
+      <img src="asset/gas.jpg" alt="Revisión y Mantenimiento de Sistemas de Gas">
+      <div class="descripcion">
+        <h3>Revisión y Mantenimiento de Sistemas de Gas</h3>
+        <p>Realizamos revisiones y mantenimiento exhaustivos de sistemas de gas para garantizar la seguridad y eficiencia. Desde la detección de fugas hasta la calibración de equipos, cuidamos de tu sistema de gas.</p>
+      </div>
+    </div>
+    
+    <div class="servicio">
+      <img src="asset/iluminacion.jpg" alt="Iluminación y Servicios de Energía">
+      <div class="descripcion">
+        <h3>Iluminación y Servicios de Energía</h3>
+        <p>Transformamos tus espacios con soluciones de iluminación modernas y eficientes. Además, ofrecemos servicios para mejorar la eficiencia energética de tus instalaciones, contribuyendo al ahorro de energía.</p>
+      </div>
+    </div>
+    
+    <div class="servicio">
+      <img src="asset/climatizacion.jpg" alt="Reparación y Mantenimiento de Equipos de Climatización">
+      <div class="descripcion">
+        <h3>Reparación y Mantenimiento de Equipos de Climatización</h3>
+        <p>Brindamos servicios especializados para mantener tus sistemas de climatización en óptimas condiciones. Desde la reparación de aires acondicionados hasta la optimización de sistemas, aseguramos un ambiente confortable.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form onsubmit="return enviarWhatsApp()">
+      <!-- Campos del formulario -->
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required maxlength="50" pattern="[A-Za-zÁ-Úá-úÑñ\s]+" title="Ingrese un nombre válido (solo letras y espacios)" oninput="validateNombre()">
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" required pattern="[0-9]+" title="Ingrese un número de teléfono válido (solo números)">
+    
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" required maxlength="500" title="El mensaje no puede superar los 500 caracteres"></textarea>
+    
+      <!-- Botón de enviar -->
+      <button type="submit">Enviar Mensaje por WhatsApp</button>
+    </form>
+  </section>
+
+  <script>
+    function enviarWhatsApp() {
+      // Obtener valores de los campos del formulario
+      var nombre = encodeURIComponent(document.getElementById("nombre").value);
+      var telefono = encodeURIComponent(document.getElementById("telefono").value);
+      var mensaje = encodeURIComponent(document.getElementById("mensaje").value);
+
+      // Crear el enlace de WhatsApp con los valores del formulario
+      var enlaceWhatsApp = "https://wa.me/5492235203369?text=Nombre:%20" + nombre +
+                     "%0ATeléfono:%20" + telefono +
+                     "%0AMensaje:%20" + mensaje;
+
+      // Redirigir a la página de WhatsApp
+      window.location.href = enlaceWhatsApp;
+
+      // Evitar que el formulario se envíe (ya que estamos manejando el envío a través de JavaScript)
+      return false;
+    }
+  </script>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <h3>Contacto</h3>
+        <p>Email: jesuspaez232@gmail.com</p>
+        <p>Teléfono: [+5492236685979]</p>
+      </div>
+
+      <div class="footer-right">
+        <h3>Síguenos</h3>
+        <a href="https://www.instagram.com/jesuspaez232/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>&copy; 2024 JP Mantenimiento. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
